@@ -1,0 +1,13 @@
+<div>
+    <h3>
+        <a href="">{{ task.title }}</a>
+    </h3>
+    {% if task.goal %}
+        <p>This task includes to: {{ task.goal.title }}</p>
+    {% endif %}
+    <p>Created: {{ task.created_at }}</p>
+    {% if task.deadline %}
+        <p>Time to deadline: {{ task.deadline }}</p>
+    {% endif %}
+    <p>Status: {{ task.get_status_display }}</p>
+</div>

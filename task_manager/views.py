@@ -6,12 +6,12 @@ from .models import Goal, Task
 
 def goals_and_tasks(request):
     goals = Goal.objects.all()
-    tasks = Task.objects.filter(goal__exact=None)
+    tasks = Task.objects.all()
     data = {
         'goals': goals,
         'tasks': tasks
     }
-    return render(request, '', data)
+    return render(request, 'goals_and_tasks.html', data)
 
 
 class AllTaskView(ListView):

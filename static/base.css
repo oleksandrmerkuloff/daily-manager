@@ -1,0 +1,45 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+#main-header {
+    display: flex;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+    width: 100%;
+    height: 15vh;
+    background-color: aquamarine;
+}
+
+#navigation-bar {
+    width: 70%;
+    height: 100%;
+    align-items: center;
+}
+
+#nav-list {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    font-size: 1.5em;
+}
+
+.nav-item {
+    margin-left: 1vw;
+    margin-right: 1vw;
+}
+
+.nav-link {
+    text-decoration: none;
+}
+
+#main-block {
+    min-height: 85vh;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+}

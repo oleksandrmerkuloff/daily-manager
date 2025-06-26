@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "css/goals_and_tasks.css" %}">
+{% endblock %}
+
+{% block title %}Goals and Tasks{% endblock %}
+
+{% block content %}
+    <div id="goals-list">
+        <h2>Goals</h2>
+        <ul>
+            {% for goal in goals %}
+                <li>
+                    <a href="">{{ goal.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div id="tasks-list">
+        <h2>Tasks</h2>
+        {% for task in tasks %}
+            {% include "includes/task-card.html" %}
+        {% endfor %}
+    </div>
+    <div id="filters">
+        <h2>Filters</h2>
+    </div>
+{% endblock %}

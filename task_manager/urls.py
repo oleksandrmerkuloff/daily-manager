@@ -6,7 +6,7 @@ from .views import AllGoalsView, DetailGoalView
 
 
 urlpatterns = [
-    path('', goals_and_tasks, name='task_home'),
+    path('', goals_and_tasks, name='goals-and-tasks'),
 
     path('tasks/', AllTaskView.as_view(), name='tasks-page'),
     path('tasks/<uuid:task_id>/', DetailTaskView.as_view(), name='single-task'),
