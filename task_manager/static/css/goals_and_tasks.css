@@ -1,12 +1,47 @@
-#goals-list {
+#goals-section {
     width: 25%;
-    font-size: 1.3em;
+    padding-top: 3vh;
+    padding-left: 2vw;
+    text-align: left;
+    border-right: 1px solid #D6C0B3;
 }
 
-#tasks-list {
+#list-of-goals {
+    list-style: none;
+}
+
+.single-goal-item {
+    margin-bottom: 1vh;
+}
+
+.goal-link {
+    text-decoration: none;
+    color: #493628;
+    font-size: 1.4em;
+    font-weight: 500;
+}
+
+.goal-link:hover {
+    opacity: 0.8;
+}
+
+#goals-page-link {
+    text-decoration: none;
+    font-weight: 400;
+    opacity: 0.9;
+    color: #AB886D;
+}
+
+#goals-page-link:hover {
+    opacity: 1;
+    color: #493628;
+    text-decoration: underline;
+}
+
+#tasks-section {
     width: 60%;
 }
 
-#filters {
+#functional-panel {
     width: 15%;
 }

@@ -8,24 +8,23 @@
 {% block title %}Goals and Tasks{% endblock %}
 
 {% block content %}
-    <div id="goals-list">
-        <h2>Goals</h2>
-        <ul>
+    <div id="goals-section">
+        <ul id="list-of-goals">
             {% for goal in goals|slice:":10" %}
-                <li>
-                    <a href="">{{ goal.title }}</a>
+                <li class="single-goal-item">
+                    <a href="" class="goal-link">{{ goal.title }}</a>
                 </li>
             {% endfor %}
-            <li><a href="">All goals -></a></li>
+            <li class="single-goal-item"><a href="" id="goals-page-link">All goals -></a></li>
         </ul>
     </div>
-    <div id="tasks-list">
+    <div id="tasks-section">
         <h2>Tasks</h2>
         {% for task in tasks %}
             {% include "includes/task-card.html" %}
         {% endfor %}
     </div>
-    <div id="filters">
-        <h2>Filters</h2>
+    <div id="functional-panel">
+        <h2>Functional Panel</h2>
     </div>
 {% endblock %}
