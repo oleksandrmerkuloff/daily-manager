@@ -11,11 +11,12 @@
     <div id="goals-list">
         <h2>Goals</h2>
         <ul>
-            {% for goal in goals %}
+            {% for goal in goals|slice:":10" %}
                 <li>
                     <a href="">{{ goal.title }}</a>
                 </li>
             {% endfor %}
+            <li><a href="">All goals -></a></li>
         </ul>
     </div>
     <div id="tasks-list">
