@@ -1,6 +1,7 @@
 #goals-section {
+    height: 75vh;
     width: 25%;
-    padding-top: 3vh;
+    padding-top: 6vh;
     padding-left: 2vw;
     text-align: left;
     border-right: 1px solid #D6C0B3;
@@ -40,8 +41,39 @@
 
 #tasks-section {
     width: 60%;
+    padding-top: 6vh;
+}
+
+.task-sep {
+    visibility: hidden;
+    margin: 2vh 0;
 }
 
 #functional-panel {
     width: 15%;
+    padding-top: 6vh;
+    border-left: 1px solid #D6C0B3;
+    text-align: center;
+}
+
+#search_box {
+    border-radius: 1%;
+    margin-bottom: 2vh;
+    height: 4vh;
+}
+
+#task-creation-link {
+    border-radius: 5%;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 1.3em;
+    font-weight: 500;
+    color: #E4E0E1;
+    background-color: #493628;
+    display: inline-block;
+    margin-bottom: 6vh;
+}
+
+#filter-section {
+    font-size: 1.3em;
 }

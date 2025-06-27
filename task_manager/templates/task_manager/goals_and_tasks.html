@@ -3,6 +3,7 @@
 
 {% block style %}
     <link rel="stylesheet" href="{% static "css/goals_and_tasks.css" %}">
+    <link rel="stylesheet" href="{% static "css/task_card.css" %}">
 {% endblock %}
 
 {% block title %}Goals and Tasks{% endblock %}
@@ -19,12 +20,19 @@
         </ul>
     </div>
     <div id="tasks-section">
-        <h2>Tasks</h2>
         {% for task in tasks %}
             {% include "includes/task-card.html" %}
+            <hr class="task-sep">
         {% endfor %}
     </div>
     <div id="functional-panel">
-        <h2>Functional Panel</h2>
+        <!-- Create real time search later -->
+        <input type="search" name="search" id="search_box" placeholder="Search task by title:">
+        
+        <a href="" id="task-creation-link">Create Task</a>
+        
+        <div id="filter-section">
+            <h3 id="filter-head">Filters</h3>
+        </div>
     </div>
 {% endblock %}

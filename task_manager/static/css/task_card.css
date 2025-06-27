@@ -1,0 +1,32 @@
+.task-container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.task-title {
+    font-size: 1.4em;
+}
+
+.task-link {
+    text-decoration: none;
+    color: #493628;
+}
+
+.task-link:hover {
+    opacity: 0.8;
+}
+
+.inner-goal-link {
+    text-decoration: none;
+    color: #493628;
+    font-weight: bold;
+}
+
+.inner-goal-link:hover {
+    text-decoration: underline;
+}
+
+.task-goal, .task-created-date, .task-deadline, .task-status {
+    font-size: 1.2em;
+    font-weight: 400;
+}
