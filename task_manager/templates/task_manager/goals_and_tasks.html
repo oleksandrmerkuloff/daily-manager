@@ -20,8 +20,15 @@
         </ul>
     </div>
     <div id="tasks-section">
+        <div id="ordering-container">
+            <select name="tasks_order" id="tasks_order">
+                <option value="created_at" name="tasks_order">Created At</option>
+                <option value="title" name="tasks_order">Title</option>
+                <option value="deadline" name="tasks_order">Deadline</option>
+            </select>
+        </div>
         {% for task in tasks %}
-            {% include "includes/task-card.html" %}
+        {% include "includes/task-card.html" %}
             <hr class="task-sep">
         {% endfor %}
     </div>
@@ -30,9 +37,5 @@
         <input type="search" name="search" id="search_box" placeholder="Search task by title:">
         
         <a href="" id="task-creation-link">Create Task</a>
-        
-        <div id="filter-section">
-            <h3 id="filter-head">Filters</h3>
-        </div>
     </div>
 {% endblock %}

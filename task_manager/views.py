@@ -6,7 +6,11 @@ from .models import Goal, Task
 
 def goals_and_tasks(request):
     goals = Goal.objects.all()
-    tasks = Task.objects.all()
+    if request.method == 'POST':
+        ordering = request.POST['tasks_order']
+        tasks = Task.objects.all().order_by(ordering)
+    else:
+        tasks = Task.objects.all().order_by('created_at')
     data = {
         'goals': goals,
         'tasks': tasks
