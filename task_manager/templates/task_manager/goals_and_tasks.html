@@ -27,15 +27,17 @@
                 <option value="deadline" name="tasks_order">Deadline</option>
             </select>
         </div>
-        {% for task in tasks %}
-        {% include "includes/task-card.html" %}
-            <hr class="task-sep">
-        {% endfor %}
+        <div id="task-container">
+            {% for task in tasks %}
+            {% include "includes/task-card.html" %}
+                <hr class="task-sep">
+            {% endfor %}
+        </div>
     </div>
     <div id="functional-panel">
         <!-- Create real time search later -->
         <input type="search" name="search" id="search_box" placeholder="Search task by title:">
         
-        <a href="" id="task-creation-link">Create Task</a>
+        <a href="{% url "new-task" %}" id="task-creation-link">Create Task</a>
     </div>
 {% endblock %}

@@ -1,13 +1,21 @@
-<div class="task-container">
-    <h3 class="task-title">
-        <a href="" class="task-link">{{ task.title }}</a>
-    </h3>
-    {% if task.goal %}
-        <p class="task-goal">This task includes to: <a href="" class="inner-goal-link">{{ task.goal.title }}</a></p>
-    {% endif %}
-    <p class="task-created-date">Created: {{ task.created_at }}</p>
-    {% if task.deadline %}
-        <p class="task-deadline">Time to deadline: {{ task.deadline }}</p>
-    {% endif %}
-    <p class="task-status">Status: {{ task.get_status_display }}</p>
+<div class="card">
+  <div class="container">
+    <div class="left">
+    </div>
+    <div class="right">
+      <div class="text-wrap">
+        <p class="text-content">
+          {{ task.title }}
+        </p>
+        <p class="status">Status: {{ task.get_status_display }}</p>
+        <p class="time">{{ task.created_at }}</p>
+      </div>
+      <div class="link-wrap">
+        <a href="" class="primary-cta">View Task</a>
+        {% if task.goal %}
+            <a href="" class="secondary-cta">View Goal</a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 </div>

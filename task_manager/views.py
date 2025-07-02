@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
+from django.http import HttpResponse
 
 from .models import Goal, Task
+from .forms import GoalForm, TaskForm
 
 
 def goals_and_tasks(request):
@@ -18,6 +20,14 @@ def goals_and_tasks(request):
     return render(request, 'goals_and_tasks.html', data)
 
 
+def create_task(request):
+    if request.method == 'POST':
+        return HttpResponse('Post method')
+    else:
+        form = TaskForm()
+    return render(request, 'create_new_task.html', {'form': form})
+
+
 class AllTaskView(ListView):
     model = Task
     context_object_name = 'tasks'
@@ -28,7 +38,7 @@ class AllTaskView(ListView):
 class DetailTaskView(DetailView):
     model = Task
     context_object_name = 'task'
-    template_name = ''
+    template_name = 'single_task.html'
 
 
 class AllGoalsView(ListView):

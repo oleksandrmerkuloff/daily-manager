@@ -1,0 +1,12 @@
+{%  extends "base.html" %}
+{% load static %}
+
+{% block style %}
+    <link rel="stylesheet" href="{% static "css/task_creation.css" %}">
+{% endblock %}
+
+{% block title %}New Task{% endblock %}
+
+{% block content %}
+    {{ form }}
+{% endblock %}

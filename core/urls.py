@@ -24,7 +24,7 @@ from .views import home
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home, name='home'),
-    path('my-goals-and-tasks/', include('task_manager.urls')),
+    path('task-manager/', include('task_manager.urls')),
 ]
 
 if settings.DEBUG:

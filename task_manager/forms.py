@@ -1,30 +1,35 @@
 from django import forms
 
-
-class GoalForm(forms.Form):
-    title = forms.CharField(
-        max_length=100,
-        initial='Goal Title'
-    )
-    content = forms.TextInput()
-    is_done = forms.BooleanField()
+from .models import Goal, Task, TaskNote
 
 
-class TaskForm(forms.Form):
-    title = forms.CharField(
-        max_length=100,
-        initial='Task Title'
-    )
-    content = forms.TextInput()
-    deadline = forms.DateTimeField()
-    status = None #? Choices
-    goal = None #! Foreing KEy
+class GoalForm(forms.ModelForm):
+    class Meta:
+        model = Goal
+        fields = [
+            'title',
+            'content',
+            'is_done',
+        ]
 
 
-class NoteForm(forms.Form):
-    title = forms.CharField(
-        max_length=100,
-        initial='Note Title'
-    )
-    text = forms.TextInput()
-    task = None #! Here will be foreign key
+class TaskForm(forms.ModelForm):
+    class Meta:
+        model = Task
+        fields = [
+            'title',
+            'content',
+            'deadline',
+            'status',
+            'goal'
+        ]
+
+
+class NoteForm(forms.ModelForm):
+    class Meta:
+        model = TaskNote
+        fields = [
+            'title',
+            'text',
+            'task',
+        ]

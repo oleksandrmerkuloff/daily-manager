@@ -42,6 +42,17 @@
 #tasks-section {
     width: 60%;
     padding-top: 6vh;
+    box-sizing: border-box;
+}
+
+#task-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 1.5vw;
+    padding-left: 1.5vw;
+    padding-right: 1.5vw;
+    box-sizing: border-box;
 }
 
 #ordering-container {
@@ -89,4 +100,8 @@
     display: inline-block;
     margin-top: 2vh;
     margin-bottom: 4vh;
+}
+
+#task-creation-link:hover {
+    opacity: 0.7;
 }
