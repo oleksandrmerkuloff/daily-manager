@@ -8,14 +8,15 @@
 {% block title %}{{ task.title }}{% endblock %}
 
 {% block content %}
-    <div id="post-container">
-        <!-- Created DAte -->
-        <p>Posted: {{ task.created_date }}</p>
-        <!-- POST TITLE -->
-        <h1 id="post-title">{{ task.title }}</h1>
+    <div id="task-container">
+        <p class="to-manager-link"><a href="{% url "manager-home" %}" class="manager-link">Back to Task Manager</a></p>
+        <!-- Created Date -->
+        <p>Created: {{ task.created_at }}</p>
+        <!-- TASK TITLE -->
+        <h1 id="task-title">{{ task.title }}</h1>
 
-        <div id="post-content">
-            {{ post_content|safe }}
+        <div id="task-content">
+            {{ task.content }}
         </div>
     </div>
 {% endblock %}

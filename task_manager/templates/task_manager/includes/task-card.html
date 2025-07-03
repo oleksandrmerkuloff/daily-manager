@@ -11,7 +11,7 @@
         <p class="time">{{ task.created_at }}</p>
       </div>
       <div class="link-wrap">
-        <a href="" class="primary-cta">View Task</a>
+        <a href="{% url "single-task" task.task_id %}" class="primary-cta">View Task</a>
         {% if task.goal %}
             <a href="" class="secondary-cta">View Goal</a>
         {% endif %}

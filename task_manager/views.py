@@ -1,6 +1,8 @@
+from uuid import uuid4
+from typing import Any
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse
 
 from .models import Goal, Task
 from .forms import GoalForm, TaskForm
@@ -39,6 +41,10 @@ class DetailTaskView(DetailView):
     model = Task
     context_object_name = 'task'
     template_name = 'single_task.html'
+
+    def get(self, request: HttpRequest, task_id: uuid4, *args: Any, **kwargs: Any) -> HttpResponse:
+        task = Task.objects.get(task_id=task_id)
+        return render(request, self.template_name, {'task': task})
 
 
 class AllGoalsView(ListView):
